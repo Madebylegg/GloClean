@@ -229,7 +229,6 @@ figure {
     font-size: 1.125rem;
     border-radius: 6px;
     position: relative;
-    overflow: hidden;
     transition: 
       background 0.4s ease,
       color 0.4s ease,
