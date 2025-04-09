@@ -186,7 +186,7 @@ figure {
     color: var(--secondary-color);
     text-align: center;
     padding: 4rem 1rem;
-    height: 60svh;
+    height: auto;
   }
   .hero-section .hero-content {
     max-width: 800px;
