@@ -32,33 +32,30 @@
 	--accent-active: var(--gold-dark); /* Deeper gold for active state */
 }
 
-/* Caros Black - Headings */
 @font-face {
   font-family: 'Caros';
-  src: url('../assets/fonts/Caros-Light.woff') format('woff');
+  font-style: normal;
   font-weight: 300;
-  font-style: normal;
+  src: url('../fonts/Caros-Light.woff') format('woff');
   font-display: swap;
-
 }
 
 @font-face {
   font-family: 'Caros';
-  src: url('../assets/fonts/Caros-Regular.woff') format('woff');
+  font-style: normal;
   font-weight: 700;
-  font-style: normal;
+  src: url('../fonts/Caros-Bold.woff') format('woff');
   font-display: swap;
-
 }
 
 @font-face {
   font-family: 'Caros';
-  src: url('../assets/fonts/Caros-Black.woff') format('woff');
-  font-weight: 900;
   font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/Caros-Black.woff') format('woff');
   font-display: swap;
-
 }
+
 
 html {
   -webkit-font-smoothing: antialiased;
