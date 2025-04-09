@@ -12,7 +12,16 @@
 		<link rel="preload" href="assets/fonts/Caros-Light.woff" as="font" type="font/woff" crossorigin="anonymous">
 		<link rel="preload" href="assets/fonts/Caros-Bold.woff" as="font" type="font/woff" crossorigin="anonymous">
 		<link rel="preload" href="assets/fonts/Caros-Black.woff" as="font" type="font/woff" crossorigin="anonymous">
-		
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+		<style>
+
+	  
+		  #broom-animation {
+			width: 300px;
+			height: 400px;
+			background: transparent;
+		  }
+		</style>
 	  
 	</head>
 
@@ -155,11 +164,12 @@
 			<section id="about" class="about-section">
 				<div class="container">
 					<div class="about-content">
+						<div id="broom-animation"></div>
 						<h2>Why Choose Glo Clean?</h2>
 						<p>
 							We are a corporate cleaning partner you can trust. With years of
 							industry expertise, top-tier equipment, and a dedicated team, we
-							ensure your workspace is spotless and inviting—every time.
+							ensure your workspace is spotless and inviting every time.
 						</p>
 						<ul>
 							<li>Fully insured and certified</li>
@@ -169,6 +179,7 @@
 						</ul>
 					</div>
 				</div>
+				
 			</section>
 
 			<section class="trusted" id="trusted">
@@ -241,12 +252,14 @@
 
 			<!-- CALL-TO-ACTION (OPTIONAL) -->
 			<section class="cta-section">
-				<h2>Ready for a New Standard of Clean?</h2>
-				<p>
-					Let us handle the details. Focus on what you do best, and leave the
-					cleaning to us.
-				</p>
-				<a href="#contact" class="btn btn-primary">Get in Touch</a>
+				<div class="cta-section-content">
+					<h2>Ready for a New Standard of Clean?</h2>
+					<p>
+						Let us handle the details. Focus on what you do best, and leave the
+						cleaning to us.
+					</p>
+					<a href="#contact" class="btn btn-white"  id="touch">Get in Touch</a>
+				</div>
 			</section>
 
 			<!-- CONTACT SECTION -->
@@ -290,5 +303,15 @@
 		</main>
 
 		<script src="assets/js/scripts.js"></script>
+
+		<script>
+			lottie.loadAnimation({
+			  container: document.getElementById('broom-animation'),
+			  renderer: 'svg',
+			  loop: true,
+			  autoplay: true,
+			  path: 'assets/json/BROOM-2.json' // make sure this path is correct
+			});
+		  </script>
 	</body>
 </html>
