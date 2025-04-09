@@ -1,114 +1,101 @@
-// const mobileMenuButton = document.querySelector('[data-id="mobile-menu-button"]');
-// const mobileNavMenu = document.querySelector('[data-id="mobile-nav-menu"]');
-// const mobileNavLinks = mobileNavMenu.querySelectorAll('a'); // Select all links inside the mobile menu
+// ------------------------------
+// Mobile Navigation Menu Toggle
+// ------------------------------
 
-// function toggleMobileMenu() {
-//   console.log("Toggle triggered");
-//   mobileMenuButton.classList.toggle('active');
-//   mobileNavMenu.classList.toggle('active');
-// }
-
-// mobileMenuButton.addEventListener('click', toggleMobileMenu);
-
-// // Close the menu when any nav link is clicked
-// mobileNavLinks.forEach(       // loop over each link in the list
-//   link => {                   // 'link' is the current item in the loop
-//     link.addEventListener(    // add a click event to that link
-//       'click',                // event type
-//       () => {                 // another arrow function (runs on click)
-//         toggleMobileMenu();   // this gets called when the link is clicked
-//       }
-//     );
-//   }
-// );
-
-
-// const menu = document.querySelector('.header-nav-menu');
-// const toggleButton = document.querySelector('[data-id="mobile-menu-button"]');
-
-// function toggleMenu() {
-//   if (menu.classList.contains('opening')) {
-//     // Close it
-//     menu.classList.remove('opening');
-//     menu.classList.add('closing');
-//   } else {
-//     // Open it
-//     menu.classList.remove('closing');
-//     menu.classList.add('opening');
-//   }
-// }
-
-// toggleButton.addEventListener('click', toggleMenu);
-
-
-
+// Select the mobile menu button and nav menu container using custom data attributes
 const mobileMenuButton = document.querySelector('[data-id="mobile-menu-button"]');
 const mobileNavMenu = document.querySelector('[data-id="mobile-nav-menu"]');
-const mobileNavLinks = mobileNavMenu.querySelectorAll('a');
+const mobileNavLinks = mobileNavMenu.querySelectorAll('a'); 
+// Get all <a> tags (nav links) inside the mobile menu
+const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
 
+// Track menu state (open or closed)
 let menuIsOpen = false;
 
+/**
+ * Open the mobile menu:
+ * - Removes 'closing' class to cancel any closing animation
+ * - Adds 'opening' class to trigger the open animation
+ * - Adds 'active' class to the button for styling (e.g., hamburger → cross)
+ */
 function openMenu() {
   mobileNavMenu.classList.remove('closing');
   mobileNavMenu.classList.add('opening');
   mobileMenuButton.classList.add('active');
+  mobileNavOverlay.classList.add('active');
   menuIsOpen = true;
 }
 
+/**
+ * Close the mobile menu:
+ * - Removes 'opening' class
+ * - Adds 'closing' class to trigger the close animation
+ * - Removes 'active' styling from the toggle button
+ */
 function closeMenu() {
   mobileNavMenu.classList.remove('opening');
   mobileNavMenu.classList.add('closing');
   mobileMenuButton.classList.remove('active');
+  mobileNavOverlay.classList.remove('active');
   menuIsOpen = false;
 }
 
+/**
+ * Toggle mobile menu open or closed
+ */
 function toggleMobileMenu() {
   console.log("Toggle triggered");
-  if (menuIsOpen) {
-    closeMenu();
-  } else {
-    openMenu();
-  }
+  menuIsOpen ? closeMenu() : openMenu();
 }
 
-// Toggle on button click
+// Click outside the nav to close it (overlay click)
+mobileNavOverlay.addEventListener('click', closeMenu); 
+
+// Attach toggle event to mobile menu button
 mobileMenuButton.addEventListener('click', toggleMobileMenu);
 
-// Close when any nav link is clicked
+// Close mobile menu when any link inside it is clicked
 mobileNavLinks.forEach(link => {
   link.addEventListener('click', () => {
     if (menuIsOpen) closeMenu();
   });
 });
 
-// Optional: remove `.closing` class after animation ends
+// Remove 'closing' class after the animation ends to reset state
 mobileNavMenu.addEventListener('transitionend', (e) => {
+  // Only run when the transform property (slide effect) finishes
   if (e.propertyName === 'transform' && mobileNavMenu.classList.contains('closing')) {
     mobileNavMenu.classList.remove('closing');
   }
 });
 
 
+// ------------------------------
+// Phone Link (Click to Call)
+// ------------------------------
+
+/**
+ * Wait for the entire DOM to be ready before running this script
+ */
 document.addEventListener('DOMContentLoaded', function () {
-  // Wait for the DOM to be fully loaded before attaching the event listener.
+  // Select the clickable phone icon or link by class
+  const phoneLink = document.querySelector('.header-icon');
 
-  // Get the phone link element by its class name.
-  let phoneLink = document.querySelector('.header-icon');
-
-  // Check if the phone link element exists.
+  // If the element exists, attach a click event to trigger phone call
   if (phoneLink) {
-      // Attach a click event listener to the phone link.
-      phoneLink.addEventListener('click', function (event) {
-          // Prevent the default behavior of the anchor tag (preventing the navigation).
-          event.preventDefault();
-          
-          // Call the function with the desired phone number.
-          callPhoneNumber('+07506866569');
-      });
+    phoneLink.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent default anchor behavior (navigation)
+
+      // Trigger the call with the provided phone number
+      callPhoneNumber('+07506866569');
+    });
   }
 });
 
+/**
+ * Opens the default phone dialer with the given phone number.
+ * Works on mobile devices only.
+ */
 function callPhoneNumber(phoneNumber) {
-  // Open the phone dialer with the specified phone number.
   window.location.href = 'tel:' + phoneNumber;
 }

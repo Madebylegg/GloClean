@@ -81,6 +81,8 @@ figure {
 
 .header-wrapper {
 	background-color: var(--primary-color);
+  position: relative;
+  z-index: 2;
 }
 
 .container {
@@ -94,23 +96,42 @@ figure {
 	padding: 10px 0;
 }
 
-/* hamburger */
+/* Hamburger Base */
 .hamburger {
-	width: 20px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	gap: 5px;
+  width: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+  transition: all 0.3s ease-in-out;
 }
 
 .bars {
-	width: 100%;
-	height: 1.4px;
-	background-color: var(--golden);
-	transition: all 0.3s ease-in-out;
+  width: 100%;
+  height: 1.4px;
+  background-color: var(--golden);
+  transition: all 0.3s ease-in-out;
 }
+
+.hamburger .bars {
+  transform-origin: center;
+}
+
+/* Hamburger → Cross Animation */
+.hamburger.active .bar1 {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.active .bar2 {
+  opacity: 0;
+}
+
+.hamburger.active .bar3 {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
 
 /* icon */
 
@@ -120,9 +141,11 @@ figure {
 
 /* header-navigation-menu-mobile */
 
+
+
 .header-nav-menu {
   position: fixed;
-  z-index: 1000;
+  z-index: 2;
   width: 100%;
   background-color: black;
   height: fit-content;
@@ -147,6 +170,27 @@ figure {
   pointer-events: none;
   transition: opacity 0.01s cubic-bezier(0.9, 0.05, 1, 0.2),
               transform 0.01s cubic-bezier(0.9, 0.05, 1, 0.2);
+}
+
+/* Mobile Navigation Overlay */
+
+#mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 1; /* Below the menu but above the content */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Show the overlay when nav is open */
+#mobile-nav-overlay.active {
+  opacity: 1;
+  pointer-events: all;
 }
 
 
