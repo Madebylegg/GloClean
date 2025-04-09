@@ -34,26 +34,32 @@
 
 /* Caros Black - Headings */
 @font-face {
-    font-family: 'Caros';
-    src: url('../fonts/Caros-Light.woff') format('opentype');
-    font-weight: 300;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Caros';
-    src: url('../fonts/Caros-Bold.w') format('opentype');
-    font-weight: 700;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Caros';
-    src: url('../fonts/Caros-Black.woff') format('opentype');
-    font-weight: 900;
-    font-style: normal;
-  }
-  
+  font-family: 'Caros';
+  src: url('../fonts/Caros-Light.woff2') format('woff2'),
+       url('../fonts/Caros-Light.woff') format('woff'),
+       url('../fonts/Caros-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Caros';
+  src: url('../fonts/Caros-Bold.woff2') format('woff2'),
+       url('../fonts/Caros-Bold.woff') format('woff'),
+       url('../fonts/Caros-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Caros';
+  src: url('../fonts/Caros-Black.woff2') format('woff2'),
+       url('../fonts/Caros-Black.woff') format('woff'),
+       url('../fonts/Caros-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
   
   
 body {
