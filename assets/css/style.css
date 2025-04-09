@@ -212,7 +212,7 @@ figure {
     border-radius: 10px;
     padding: 1rem;
     backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(10px); /* for Safari */
+    -webkit-backdrop-filter: blur(4px); /* for Safari */
     border: 1px solid rgba(255, 255, 255, 0.1); /* soft glassy border */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* optional: soft shadow */
     color: white; /* ensure text stays readable */
