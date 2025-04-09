@@ -469,7 +469,7 @@ img {
 
 .cta-section-content {
 	padding: 3rem 1rem;
-	color: var(--primary-color);
+	color: var(--secondary-color);
 	text-align: center;
 }
 .cta-section h2 {
@@ -477,13 +477,13 @@ img {
 	font-weight: 900;
 	margin-bottom: 1rem;
 	text-transform: uppercase;
-  color: var(--primary-active);
+  color: var(--secondary-color);
 }
 .cta-section p {
 	font-size: 1.2rem;
 	font-weight: 500;
 	margin-bottom: 1rem;
-	color: var(--primary-active);
+	color: var(--secondary-color);
 	text-align: center;
 }
 
