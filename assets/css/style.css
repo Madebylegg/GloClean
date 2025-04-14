@@ -600,13 +600,11 @@ img {
 @media (min-width: 768px) {
 	/* Layout Adjustments */
 	.container {
-	  padding-inline: 30px;
-	}
-	
-	.header-content {
-	  padding: 15px 40px;
-	}
-	
+		padding-inline: 30px;
+	  }
+	  .header-content {
+		padding: 15px 40px;
+	  }
 	/* Hero Section */
 	.hero-section {
 	  padding: 5rem 2rem;
@@ -791,6 +789,19 @@ img {
 	/* Contact Section */
 	.contact-form {
 	  max-width: 600px;
+	}
+  }
+  
+
+
+  
+  @media (min-width: 1024px) {
+	.hero-section {
+	  height: 80svh;
+	  padding: 6rem 2rem;
+	}
+	.services-grid {
+	  grid-template-columns: repeat(3, 1fr);
 	}
   }
   
