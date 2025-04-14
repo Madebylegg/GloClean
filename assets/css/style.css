@@ -357,7 +357,7 @@ img {
 
 /* ABOUT SECTION */
 .about-section {
-	padding-bottom: 1rem;
+	padding-bottom: 5rem;
 	background-color: var(--gold-middle);
 	color: var(--secondary-color);
 	text-align: center;
@@ -587,3 +587,210 @@ img {
 	padding: 1rem;
 	margin: 0 0.5rem;
 }
+
+
+
+/* MEDIA QUERIES */
+
+/* Mobile-first CSS */
+/* (Your existing styles above remain unchanged) */
+
+
+/* Tablet Styles: screens 768px and wider */
+@media (min-width: 768px) {
+	/* Layout Adjustments */
+	.container {
+	  padding-inline: 30px;
+	}
+	
+	.header-content {
+	  padding: 15px 40px;
+	}
+	
+	/* Hero Section */
+	.hero-section {
+	  padding: 5rem 2rem;
+	  height: 70svh; /* Adjust height for tablets */
+	}
+	
+	.hero-section h1 {
+	  font-size: 3rem; /* Slightly larger heading */
+	}
+	
+	.hero-section p {
+	  font-size: 1.5rem; /* Increase font-size for better readability */
+	}
+	
+	/* Services Section */
+	.services-grid {
+	  grid-template-columns: repeat(2, 1fr); /* Two columns for tablet screens */
+	  gap: 1.5rem;
+	}
+	
+	/* About Section */
+	.about-content h2 {
+	  font-size: 3rem;
+	}
+	
+	/* Trusted Section (if you want to adjust logo grid) */
+	.master-logos-grid {
+	  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	  gap: 1rem;
+	}
+	
+	/* CTA Section */
+	.cta-section {
+	  padding: 3rem 2rem;
+	}
+	
+	/* Contact Section */
+	.contact-form {
+	  max-width: 600px; /* Widen the form on larger screens */
+	}
+  }
+  
+  
+  /* Desktop Styles: screens 1024px and wider */
+  @media (min-width: 1025px) {
+	/* Centralize the container on larger screens */
+
+	/* header-navigation-menu-mobile */
+	@media (min-width: 1025px) {
+/* Ensure container is centralized */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* Reset nav and hide mobile-specific elements */
+  .header-nav-menu {
+    all: unset; /* note: this removes all properties, so we re-add what we need */
+    display: block;
+    width: 50%;
+	/* height: 2rem; */
+    background-color: var(--golden);
+	margin: 0 auto;
+  }
+  
+  .header-nav-menu.opening,
+  .header-nav-menu.closing,
+  #mobile-nav-overlay,
+  #mobile-nav-overlay.active,
+  .header-nav-menu.active,
+  .header-icon,
+  .hamburger {
+    display: none;
+  }
+  
+  .header-nav-menu-dekstop-wrapper{
+	background-color: var(--golden);
+  }
+  /* Navigation list styling */
+  .header-nav-menu ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 0; /* Remove any gap between items */
+  }
+  
+  /* List items take equal space and have no margin */
+  .header-nav-menu ul li {
+    margin: 0;
+    flex: 1; /* Each nav item takes up equal width */
+	padding: 0;
+  }
+  
+  /* Anchor/link styling ensuring full-area coverage */
+  .header-nav-menu ul li a {
+    display: block;         /* Fills the entire li area */
+    width: 100%;            /* Necessary with block display */
+    text-align: center;     /* Centers text (optional) */
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0.7rem 1rem;    /* Adjust padding as needed */
+    background: var(--btn-bg); /* Base gradient for the element */
+    transition: background 0.4s ease, 
+                color 0.4s ease, 
+                transform 0.2s ease, 
+                box-shadow 0.4s ease;
+    border: none;
+  }
+  
+  /* Hover state that spans the full link element */
+  .header-nav-menu ul li a:hover {
+    background: var(--btn-hover-bg);
+    color: var(--btn-hover-text);
+    box-shadow: var(--btn-hover-shadow);
+    text-decoration: none;
+  }
+  
+  /* Additional header content centering, if needed */
+  .header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 80px;
+  }}
+	  
+	
+	/* Hero Section */
+	.hero-section {
+	  padding: 6rem 2rem;
+	  height: 80svh; /* Increase hero section height on desktop */
+	}
+	
+	.trusted .container{
+		height: 100vh;
+		display: flex;
+	}
+
+	.trusted-content{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+	.hero-section h1 {
+	  font-size: 4rem;
+	}
+	
+	.hero-section p {
+	  font-size: 1.75rem;
+	}
+	
+	/* Services Section */
+	.services-grid {
+	  grid-template-columns: repeat(2, 1fr); /* Three columns for desktop */
+	  gap: 2rem;
+	}
+	
+	/* About Section */
+	.about-content h2 {
+	  font-size: 4rem;
+	}
+	
+	/* Trusted Section: Adjust logo grid to display more items per row */
+	.master-logos-grid {
+	  grid-template-columns: repeat(4, 1fr);
+	  gap: 2rem;
+	}
+
+	.master-logos-grid figure:last-child {
+		grid-column: 2 / 4;
+	}
+	
+	/* CTA Section */
+	.cta-section {
+	  padding: 12rem 6rem;
+	}
+	
+	/* Contact Section */
+	.contact-form {
+	  max-width: 600px;
+	}
+  }
+  

@@ -80,10 +80,19 @@ mobileNavMenu.addEventListener('transitionend', (e) => {
 document.addEventListener('DOMContentLoaded', function () {
   // Select the clickable phone icon or link by class
   const phoneLink = document.querySelector('.header-icon');
+  const touchCTA = document.getElementById('touch');
 
   // If the element exists, attach a click event to trigger phone call
   if (phoneLink) {
     phoneLink.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent default anchor behavior (navigation)
+
+      // Trigger the call with the provided phone number
+      callPhoneNumber('+07506866569');
+    });
+  }
+  if (touchCTA) {
+    touchCTA.addEventListener('click', function (event) {
       event.preventDefault(); // Prevent default anchor behavior (navigation)
 
       // Trigger the call with the provided phone number
