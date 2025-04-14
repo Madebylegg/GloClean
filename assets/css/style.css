@@ -318,11 +318,20 @@ img {
 	gap: 1rem;
 	margin-top: 2rem;
 }
-.section-header h2 {
+.services-section h2{
+	font-size: 2.5rem;
 	font-weight: 900;
-	font-size: 2rem;
+	margin-bottom: 1rem;
 	text-transform: uppercase;
-	margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.services-section p {
+	font-size: 1.2rem;
+	font-weight: 500;
+	margin-bottom: 1rem;
+	color: var(--primary-color);
+	text-align: center;
 }
 .service-card {
 	background-color: #f9f9f9;
@@ -520,6 +529,22 @@ img {
 	color: var(--text-color);
 	text-align: center;
 }
+
+.contact-section h2{
+	font-size: 2.5rem;
+	font-weight: 900;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+.contact-section p {
+	font-size: 1.2rem;
+	font-weight: 500;
+	margin-bottom: 1rem;
+	color: var(--primary-color);
+	text-align: center;
+}
 .contact-info {
 	margin-bottom: 2rem;
 }
@@ -538,7 +563,7 @@ img {
 	border-radius: 3px;
 }
 .contact-form button {
-	align-self: flex-start;
+	align-self: center;
 }
 
 /* FOOTER */
@@ -552,7 +577,13 @@ img {
 	max-width: 800px;
 	margin: 0 auto;
 }
+.social-icons{
+	padding: 0.5rem;
+	margin: 0.5rem
+}
 .social-icons a {
 	color: var(--secondary-color);
+	font-size: 1.5rem;
+	padding: 1rem;
 	margin: 0 0.5rem;
 }
