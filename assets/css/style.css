@@ -781,12 +781,13 @@ img {
 	}
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 250px) { 
 	.hero-section {
 		height: 80svh;
-		padding: 6rem 2rem;
+		padding: 4rem 1rem; /* Adjust padding for small widths */
 	}
+
 	.services-grid {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: 1fr; /* Stack items in a single column */
 	}
 }
