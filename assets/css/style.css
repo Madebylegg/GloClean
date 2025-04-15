@@ -780,19 +780,3 @@ img {
 		max-width: 600px;
 	}
 }
-@media (max-width: 250px) { 
-	.hero-section {
-		height: 60vh; /* Adjusted to fit better */
-		padding: 2rem 1rem; /* Reduced padding */
-		overflow: hidden; /* Prevents overflow */
-	}
-
-	.services-grid {
-		grid-template-columns: 1fr; /* Stack grid items for smaller width */
-	}
-
-	/* Ensure text and other content fits */
-	h1, p {
-		font-size: 1.2rem; /* Adjust font size for small screens */
-	}
-}
